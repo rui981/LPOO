@@ -54,7 +54,7 @@ public class UserInterface {
 	
 	
 	
-	public static void printMaze(Celula[][] board)
+	public void printMaze(Celula[][] board)
 	{	int width= board.length;
 		for (int i = 0; i < width; i++) {
 			System.out.print(" ");
