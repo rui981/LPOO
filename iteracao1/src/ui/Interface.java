@@ -6,9 +6,11 @@ import java.util.Scanner;
 import logic.Maze;
 
 public class Interface {
+	
 	public void print(String str){
 		System.out.print(str);
 	}
+	
 	public void println(String str){
 		System.out.println(str);
 	}
@@ -17,6 +19,7 @@ public class Interface {
 		for(int i=0; i < 10; i++){
 			System.out.println();
 		}
+		
 	}
 	
 	
@@ -25,9 +28,6 @@ public class Interface {
 		int nr= s.nextInt();
 		return nr;
 	}
-	
-	
-	
 	
 	public void menu(){
 		int options[]= new int[3];
@@ -64,13 +64,9 @@ public class Interface {
 			
 	}
 	
-	public static char uiMove(char dir) {
-        try {
-                dir = (char) System.in.read();
-        } catch (IOException e) {
-                System.out.println("Error!");
-                e.printStackTrace();
-        }
+	public static String uiMove(String dir) throws IOException {
+        Scanner s= new Scanner(System.in);
+		dir =  s.nextLine();
         return dir;
 }
 	
