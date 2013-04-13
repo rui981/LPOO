@@ -22,12 +22,12 @@ public class Maze implements Builder {
 	public static int dificuldade=1;
 	public static int numDragoes=1;
 
-	private Dragon[] d;
+	private static Dragon[] d;
 
-	private Hero h = new Hero(1, 2);
-	private Sword s = new Sword(8, 1);
-	private Exit exit = new Exit();
-	private Eagle g = new Eagle(h.getX(), h.getY());
+	public static Hero h = new Hero(1, 2);
+	public static Sword s = new Sword(8, 1);
+	public static Exit exit = new Exit();
+	public  static Eagle g = new Eagle(h.getX(), h.getY());
 	public static Casa[][] board;
 
 	public void fillDragons() {
@@ -198,7 +198,7 @@ public class Maze implements Builder {
 
 }
 
-	public  boolean move(Hero h, Sword s, Eagle e, char dir, int posi,
+	public static  boolean move(Hero h, Sword s, Eagle e, char dir, int posi,
 			int posj, boolean b) {
 		switch (dir) {
 		case 'd':
@@ -412,7 +412,7 @@ public static boolean checkDragon(Dragon dragon, Eagle e) throws Exception {
 		print_maze();
 	}*/
 
-public void gamePlay2(int posi, int posj) {
+public static void gamePlay2(int posi, int posj) {
 	delete(posi, posj);
 
 	if (g.hasSword && g.alive)
@@ -428,7 +428,7 @@ public void gamePlay2(int posi, int posj) {
 	print_maze();
 }
 
-public void eagleReturn(Eagle e, Sword s) {
+public static void eagleReturn(Eagle e, Sword s) {
 
 	if (e.x > e.initX && board[e.x - 1][e.y].getLetra() != 'X') {
 		delete(e.x, e.y);
@@ -952,7 +952,7 @@ public int[] findExit() {
 
 // Parte array dragoes
 
-public boolean checkalldead() {
+public static boolean checkalldead() {
 	for (int i = 0; i < d.length; i++) {
 		if (d[i].isAlive())
 			return false;
@@ -966,7 +966,7 @@ public void killDragon(Dragon dragon) {
 	board[dragon.x][dragon.y].setLetra(' ');
 }
 
-public void moveAllDragons() {
+public static void moveAllDragons() {
 	int dire = 0;
 	for (int i = 0; i < d.length; i++) {
 		if (d[i].isAlive()) {

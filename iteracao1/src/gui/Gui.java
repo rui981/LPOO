@@ -52,7 +52,7 @@ public class Gui {
 		cinit.add(sair);
 		init.setBounds(200, 200, 300, 300);
 		opcoes.setBounds(200, 200, 300, 400);
-		jogo.setBounds(200, 200, 800, 800);
+		jogo.setBounds(200, 200, 1200, 1200);
 		init.pack();
 
 		// jogo.pack();
@@ -78,6 +78,7 @@ public class Gui {
 		nrDragoes.setMinorTickSpacing(2);
 		nrDragoes.setPaintLabels(true);
 
+		
 		nrDragoes.addChangeListener(new ChangeListener() {
 
 			@Override
@@ -124,7 +125,7 @@ public class Gui {
 				}
 				cjogo.setLayout(new GridLayout(Maze.tamanho, Maze.tamanho,
 						1 / 9, 1 / 9));
-				cjogo.setBounds(200, 200, 1200, 800);
+				
 				String board = new String();
 				Casa[][] b = Maze.getBoard();
 				for (int i = 0; i < Maze.tamanho; i++) {
@@ -160,7 +161,8 @@ public class Gui {
 				char tecla = e.getKeyChar();
 
 				if (e.getKeyCode() == KeyEvent.VK_W) {
-
+					
+					
 					cjogo.removeAll();
 					
 					
@@ -168,7 +170,10 @@ public class Gui {
 					//cjogo.setBounds(200, 200, 1200, 800);
 					String board = new String();
 					Casa[][] b = Maze.getBoard();
-					b[1][1].setLetra('C');
+					b[Maze.h.x][Maze.h.y-1].setLetra('H');
+					Maze.h.x-=1;
+					b[Maze.h.x][Maze.h.y].setLetra(' ');
+					//b[1][1].setLetra('C');
 					for (int i = 0; i < Maze.tamanho; i++) {
 						for (int j = 0; j < Maze.tamanho; j++) {
 							board = Character.toString(b[j][i].getLetra());
@@ -187,7 +192,10 @@ public class Gui {
 					//cjogo.setBounds(200, 200, 1200, 800);
 					String board = new String();
 					Casa[][] b = Maze.getBoard();
-					b[1][1].setLetra('B');
+					b[Maze.h.x][Maze.h.y+1].setLetra('H');
+					Maze.h.y+=1;
+					b[Maze.h.x][Maze.h.y].setLetra(' ');
+					//b[1][1].setLetra('B');
 					for (int i = 0; i < Maze.tamanho; i++) {
 						for (int j = 0; j < Maze.tamanho; j++) {
 							board = Character.toString(b[j][i].getLetra());
@@ -207,7 +215,10 @@ public class Gui {
 					//cjogo.setBounds(200, 200, 1200, 800);
 					String board = new String();
 					Casa[][] b = Maze.getBoard();
-					b[1][1].setLetra('E');
+					b[Maze.h.x-1][Maze.h.y].setLetra('H');
+					Maze.h.x-=1;
+					b[Maze.h.x][Maze.h.y].setLetra(' ');
+					//b[1][1].setLetra('E');
 					for (int i = 0; i < Maze.tamanho; i++) {
 						for (int j = 0; j < Maze.tamanho; j++) {
 							board = Character.toString(b[j][i].getLetra());
@@ -226,7 +237,10 @@ public class Gui {
 					//cjogo.setBounds(200, 200, 1200, 800);
 					String board = new String();
 					Casa[][] b = Maze.getBoard();
-					b[1][1].setLetra('D');
+					b[Maze.h.x+1][Maze.h.y].setLetra('H');
+					Maze.h.x+=1;
+					b[Maze.h.x][Maze.h.y].setLetra(' ');
+				//	b[1][1].setLetra('D');
 					for (int i = 0; i < Maze.tamanho; i++) {
 						for (int j = 0; j < Maze.tamanho; j++) {
 							board = Character.toString(b[j][i].getLetra());
