@@ -32,7 +32,7 @@ import logic.Maze;
 
 public class Gui {
 	public static void main(String args[]) throws Exception {
-
+/*
 		final JFrame init = new JFrame("INICIO");
 		final JFrame opcoes = new JFrame("OPCOES");
 		final JFrame jogo = new JFrame("JOGO");
@@ -127,7 +127,7 @@ public class Gui {
 						1 / 9, 1 / 9));
 				
 				String board = new String();
-				Casa[][] b = Maze.getBoard();
+				//Casa[][] b = Maze.getBoard();
 				for (int i = 0; i < Maze.tamanho; i++) {
 					for (int j = 0; j < Maze.tamanho; j++) {
 						board = Character.toString(b[j][i].getLetra());

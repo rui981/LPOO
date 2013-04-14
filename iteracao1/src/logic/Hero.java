@@ -1,18 +1,16 @@
 package logic;
 
 
-
-
-
 public class Hero extends Casa {
-	 public int x,y;
-	 public boolean haveSword;
+	 private int x;
+	 private int y;
+	 private boolean haveSword;
 	
 	 public Hero(int x, int y) {
 		super('H');
 		 this.x=x;
 		this.y=y;
-		haveSword=false;
+		setHaveSword(false);
 	}
 	public int getX() {
 	return x;
@@ -35,6 +33,12 @@ public class Hero extends Casa {
 	
 	public void setLetra(char le){
 		letra=le;
+	}
+	public boolean isHaveSword() {
+		return haveSword;
+	}
+	public void setHaveSword(boolean haveSword) {
+		this.haveSword = haveSword;
 	}
 	
 }
